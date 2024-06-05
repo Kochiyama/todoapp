@@ -1,4 +1,4 @@
-import { NavigationLink } from "@molecules";
+import { CategorySelectorButton } from "@molecules";
 import { TaskCategory } from "@enums";
 import { Logo } from "@atoms";
 import { cn } from "@/lib/utils";
@@ -17,7 +17,7 @@ export function Sidebar({ className }: { className?: string }) {
 			<Suspense>
 				<div className="flex flex-col gap-4 flex-1 w-full">
 					{Object.values(TaskCategory).map((category) => (
-						<NavigationLink key={category} category={category} />
+						<CategorySelectorButton key={category} category={category} />
 					))}
 				</div>
 			</Suspense>

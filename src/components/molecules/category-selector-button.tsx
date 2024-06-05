@@ -9,7 +9,7 @@ type Props = {
 	category: TaskCategory;
 };
 
-export function NavigationLink({ category }: Props) {
+export function CategorySelectorButton({ category }: Props) {
 	const { category: currentCategory, setCategory } = useTasks();
 	const isActive = currentCategory === category;
 
