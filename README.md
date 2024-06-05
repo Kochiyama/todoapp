@@ -13,7 +13,7 @@ A todo app where you can organize your tasks in three distinct lists: general, w
 
 ## Documents 
 
-- [Project Charter (Minimalistic)](https://github.com/Kochiyama/todoapp/.github/project-charter.pdf)
+- [Project Charter (Minimalistic)](https://github.com/Kochiyama/todoapp/blob/master/.github/project-charter.pdf)
 - [Figma File (UI Design)](https://www.figma.com/design/o8TddTPLpdggi7RccQKExB/TodoApp?node-id=0-1&t=kNjbTzclzcSSqJ80-1)
 
 ## Running Locally
