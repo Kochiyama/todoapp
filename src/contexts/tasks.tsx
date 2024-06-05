@@ -11,7 +11,6 @@ import {
 import { TaskCategory, TaskStatus } from "@enums";
 import { ResourceError } from "@exceptions";
 import type { ITask } from "@interfaces";
-import { useSearchParams } from "next/navigation";
 import {
 	type ReactNode,
 	createContext,
@@ -23,9 +22,11 @@ import { toast } from "sonner";
 
 type ContextData = {
 	tasks: ITask[];
+	category: TaskCategory;
 	createTask: (data: CreateTaskData) => void;
 	updateTask: (uuid: string, data: UpdateTaskData) => void;
 	removeTask: (uuid: string) => void;
+	setCategory: (category: TaskCategory) => void;
 	clearDoneTasks: () => void;
 };
 
@@ -33,10 +34,7 @@ const context = createContext({} as ContextData);
 
 export function TasksProvider({ children }: { children: ReactNode }) {
 	const [tasks, setTasks] = useState<ITask[]>([]);
-
-	const searchParams = useSearchParams();
-	const category =
-		(searchParams.get("category") as TaskCategory) ?? TaskCategory.General;
+	const [category, setCategory] = useState<TaskCategory>(TaskCategory.General);
 
 	function loadTasks() {
 		if (!category) return;
@@ -49,7 +47,7 @@ export function TasksProvider({ children }: { children: ReactNode }) {
 
 		const response = createTask({
 			title: data.title,
-      category
+			category,
 		});
 
 		if (response instanceof ResourceError) {
@@ -96,9 +94,11 @@ export function TasksProvider({ children }: { children: ReactNode }) {
 		<context.Provider
 			value={{
 				tasks,
+				category,
 				createTask: create,
 				updateTask: update,
 				removeTask: remove,
+				setCategory,
 				clearDoneTasks,
 			}}
 		>

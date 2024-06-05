@@ -1,39 +1,21 @@
-"use client";
-
-import { TaskCategory } from "@/common/enums";
-import { useDrawer } from "@/contexts";
-import { CategoryIcon, IconButton, Text } from "@atoms";
-import { ClearTasksButton, NewTaskForm, TasksList } from "@organisms";
-import { Menu } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { DrawerProvider, TasksProvider } from "@/contexts";
+import { NewTaskForm, TasksList, TaskPageHeader } from "@organisms";
+import { Suspense } from "react";
 
 export default function Home() {
-	const searchParams = useSearchParams();
-
-	const { onOpen } = useDrawer();
-
-	const category =
-		(searchParams.get("category") as TaskCategory) ?? TaskCategory.General;
-
 	return (
-		<div className="p-8 flex flex-col gap-4">
-			<div className="flex items-center gap-2">
-				<IconButton variant="ghost" onClick={onOpen} className="flex md:hidden">
-					<Menu />
-				</IconButton>
+		<DrawerProvider>
+			<TasksProvider>
+				<div className="p-8 flex flex-col gap-4">
+					<Suspense>
+						<TaskPageHeader />
+					</Suspense>
 
-				<CategoryIcon category={category} />
+					<TasksList />
 
-				<Text size="lg" className="flex-1 py-1">
-					{category}
-				</Text>
-
-				<ClearTasksButton />
-			</div>
-
-			<TasksList />
-
-			<NewTaskForm pageTitle="Inbox" />
-		</div>
+					<NewTaskForm pageTitle="Inbox" />
+				</div>
+			</TasksProvider>
+		</DrawerProvider>
 	);
 }
