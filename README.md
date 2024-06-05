@@ -34,10 +34,10 @@ A todo app where you can organize your tasks in three distinct lists: general, w
 - [x] Fixed lists.
 - [x] Responsive.
 - [x] Data persistance (Local Storage). -> MVP Reached
-- [] Cloud storage (api with auth).
-- [] Custom lists.
-- [] Due date.
-- [] Board View.
-- [] Calendar View.
-- [] Timeline View.
-- [] Google Calendar Integration.
+- [ ] Cloud storage (api with auth).
+- [ ] Custom lists.
+- [ ] Due date.
+- [ ] Board View.
+- [ ] Calendar View.
+- [ ] Timeline View.
+- [ ] Google Calendar Integration.
