@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { CategoryIcon, Text } from "@atoms";
 import type { TaskCategory } from "@enums";
 import { cn } from "@/lib/utils";
@@ -11,13 +10,18 @@ type Props = {
 };
 
 export function NavigationLink({ category }: Props) {
-	const { category: currentCategory } = useTasks();
+	const { category: currentCategory, setCategory } = useTasks();
 	const isActive = currentCategory === category;
 
+	function handleClick() {
+		setCategory(category);
+	}
+
 	return (
-		<Link
-			href={`/?category=${category}`}
-			className="flex px-4 py-2 gap-2 rounded-xl items-center hover:bg-slate-700 transition-all"
+		<button
+			type="button"
+			onClick={handleClick}
+			className="flex items-center gap-2 text-start px-8 py-4 rounded-lg transition-all hover:bg-slate-700"
 		>
 			<CategoryIcon category={category} />
 
@@ -31,6 +35,6 @@ export function NavigationLink({ category }: Props) {
 					isActive ? "translate-x-0 opacity-1" : "translate-x-full opacity-0",
 				)}
 			/>
-		</Link>
+		</button>
 	);
 }

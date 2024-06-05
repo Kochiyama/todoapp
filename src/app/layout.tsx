@@ -1,8 +1,9 @@
+import { DrawerProvider, TasksProvider } from "@/contexts";
+import { MainTemplate } from "@templates";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
-import { MainTemplate } from "@templates";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,11 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Toaster richColors theme="dark" />
 
-				<MainTemplate>{children}</MainTemplate>
+				<TasksProvider>
+					<DrawerProvider>
+						<MainTemplate>{children}</MainTemplate>
+					</DrawerProvider>
+				</TasksProvider>
 			</body>
 		</html>
 	);
