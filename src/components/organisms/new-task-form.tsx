@@ -25,6 +25,7 @@ export function NewTaskForm({ pageTitle }: Props) {
   return (
     <form onSubmit={handleSubmit} className="flex gap-2 items-center">
       <Input
+        name="task-title"
         value={title}
         onChange={setTitle}
         className="flex-1"
