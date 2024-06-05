@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TodoApp by Kochiyama
 
-## Getting Started
+A todo app where you can organize your tasks in three distinct lists: general, work and personal.
 
-First, run the development server:
+- You can clear all completed tasks from a list with a single button click.
+- All tasks are stored locally. Don't be afraid to close your tab.
+- Mobile first design.
+- UI design aimed to be friendly and easy to use.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[TodoApp](https://tasks.marcelokochiyama.com)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Documents 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Project Charter (Minimalistic)](https://github.com/Kochiyama/todoapp/.github/project-charter.pdf)
+- [Figma File (UI Design)](https://www.figma.com/design/o8TddTPLpdggi7RccQKExB/TodoApp?node-id=0-1&t=kNjbTzclzcSSqJ80-1)
 
-## Learn More
+## Running Locally
 
-To learn more about Next.js, take a look at the following resources:
+1. Make sure you have [Node](https://nodejs.org/en/download/package-manager) v21.6.2 installed.
+2. Make sure you also have [Pnpm](https://pnpm.io/) installed.
+3. Clone [this repository](https://github.com/Kochiyama/todoapp).
+4. Inside the directory, install the dependencies running `pnpm i`.
+5. Start on development mode by running `pnpm dev`.
+6. You should see an URL on your terminal where you can access the app.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] Create tasks.
+- [x] Remove tasks.
+- [x] Toggle task status.
+- [x] Clear completed tasks.
+- [x] Fixed lists.
+- [x] Responsive.
+- [x] Data persistance (Local Storage). -> MVP Reached
+- [] Cloud storage (api with auth).
+- [] Custom lists.
+- [] Due date.
+- [] Board View.
+- [] Calendar View.
+- [] Timeline View.
+- [] Google Calendar Integration.
