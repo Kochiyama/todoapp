@@ -11,6 +11,8 @@ A todo app where you can organize your tasks in three distinct lists: general, w
 
 [TodoApp](https://tasks.marcelokochiyama.com)
 
+![Preview](https://github.com/Kochiyama/todoapp/blob/master/.github/preview.jpeg)
+
 ## Documents 
 
 - [Project Charter (Minimalistic)](https://github.com/Kochiyama/todoapp/blob/master/.github/project-charter.pdf)
