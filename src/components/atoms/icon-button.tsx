@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 type Props = {
+  id?: string;
   type?: "button" | "submit";
   variant?: "primary" | "ghost";
   onClick?: () => void;
@@ -11,6 +12,7 @@ type Props = {
 };
 
 export function IconButton({
+  id,
   type = "button",
   variant = "primary",
   onClick,
@@ -20,6 +22,7 @@ export function IconButton({
 }: Props) {
   return (
     <button
+      id={id}
       type={type}
       onClick={onClick}
       className={cn(

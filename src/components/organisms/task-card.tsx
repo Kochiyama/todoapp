@@ -33,11 +33,17 @@ export function TaskCard({ task }: Props) {
       <Button
         title={task.title}
         onClick={onToggleTaskStatus}
-        leftIcon={isDone ? <SquareCheck className="text-teal-400" size={24} /> : <Square size={24} />}
+        leftIcon={
+          isDone ? (
+            <SquareCheck id="done-icon" className="text-teal-400" size={24} />
+          ) : (
+            <Square id="open-icon" size={24} />
+          )
+        }
         className="flex-1"
       />
 
-      <IconButton variant="ghost" onClick={onRemove}>
+      <IconButton id="delete-task-button" variant="ghost" onClick={onRemove}>
         <Trash2 className="text-red-400" size={24} />
       </IconButton>
     </div>
