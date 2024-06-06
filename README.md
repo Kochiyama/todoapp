@@ -27,6 +27,11 @@ A todo app where you can organize your tasks in three distinct lists: general, w
 5. Start on development mode by running `pnpm dev`.
 6. You should see an URL on your terminal where you can access the app.
 
+## Testing the App (E2E)
+
+1. Make sure you have followed all six steps from the section *Running Locally*.
+2. Execute all e2e tests by running `pnpm cypress run`.
+
 ## Roadmap
 
 - [x] Create tasks.
