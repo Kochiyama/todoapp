@@ -9,6 +9,7 @@ type Props = {
   children: ReactNode;
   isVisible?: boolean;
   className?: string;
+  isDisabled?: boolean;
 };
 
 export function IconButton({
@@ -19,6 +20,7 @@ export function IconButton({
   children,
   isVisible = true,
   className,
+  isDisabled,
 }: Props) {
   return (
     <button
@@ -31,6 +33,7 @@ export function IconButton({
           ? "bg-teal-400 text-slate-800 md:hover:bg-teal-500"
           : "text-slate-200 hover:bg-slate-700",
         isVisible ? "translate-y-0 opacity-1" : "-translate-y-full opacity-0",
+        isDisabled ? "brightness-50 md:hover:bg-teal-400 cursor-not-allowed" : "brightness-100",
         className,
       )}
     >

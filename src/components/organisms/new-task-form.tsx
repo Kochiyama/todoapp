@@ -6,35 +6,38 @@ import { CircleFadingPlus } from "lucide-react";
 import { type FormEvent, useState } from "react";
 
 type Props = {
-  pageTitle: string;
+	pageTitle: string;
 };
 
 export function NewTaskForm({ pageTitle }: Props) {
-  const [title, setTitle] = useState("");
+	const [title, setTitle] = useState("");
 
-  const { createTask } = useTasks();
+	const { createTask } = useTasks();
 
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    createTask({
-      title,
-    });
-    setTitle("");
-  }
+	function handleSubmit(e: FormEvent) {
+		e.preventDefault();
 
-  return (
-    <form onSubmit={handleSubmit} className="flex gap-2 items-center">
-      <Input
-        name="task-title"
-        value={title}
-        onChange={setTitle}
-        className="flex-1"
-        placeholder={`New task on ${pageTitle}`}
-      />
+		if (title === "") return;
 
-      <IconButton type="submit" className="w-12 h-12">
-        <CircleFadingPlus size={24} />
-      </IconButton>
-    </form>
-  );
+		createTask({
+			title,
+		});
+		setTitle("");
+	}
+
+	return (
+		<form onSubmit={handleSubmit} className="flex gap-2 items-center">
+			<Input
+				name="task-title"
+				value={title}
+				onChange={setTitle}
+				className="flex-1"
+				placeholder={`New task on ${pageTitle}`}
+			/>
+
+			<IconButton type="submit" className="w-12 h-12" isDisabled={title === ""}>
+				<CircleFadingPlus size={24} />
+			</IconButton>
+		</form>
+	);
 }
